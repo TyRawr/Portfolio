@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button, Container, Group, Select, Stack, Text, Title } from "@mantine/core";
+import { AppShell, Button, Container, Group, Select, Stack, Text, Title } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 const NOTES = [
   { name: "C4", freq: 261.63 },
@@ -91,31 +92,65 @@ export default function EarTraining() {
   }
 
   return (
-    <Container size="sm" py={80}>
-      <Stack gap="lg">
-        <Title>Ear Training</Title>
 
-        <Text c="dimmed">
-          Listen to two notes and identify the interval.
-        </Text>
+    <AppShell header={{ height: 70 }} padding="md">
+        {/* Header */}
+        <AppShell.Header>
+          <Container h="100%">
+            <Group justify="space-between" h="100%">
+              <Title order={3} c="mint.5">
+                Tyler Rasmussen
+              </Title>
 
-        <Group>
-          <Button onClick={generate}>Generate</Button>
-          <Button onClick={play} disabled={!notePair}>
-            Play Interval
-          </Button>
-        </Group>
+              <Group>
+                <Button component={Link} to="/" variant="subtle">
+                  Home
+                </Button>
 
-        <Select
-          label="Your guess"
-          placeholder="Pick interval"
-          data={Object.keys(INTERVALS)}
-          value={guess}
-          onChange={checkAnswer}
-        />
+                <Button
+                  component={Link}
+                  to="/ear-training"
+                  variant="light"
+                  color="mint"
+                >
+                  Ear Training
+                </Button>
+              </Group>
+            </Group>
+          </Container>
+        </AppShell.Header>
 
-        {result && <Text>{result}</Text>}
-      </Stack>
-    </Container>
+      {/* Main */}
+      <AppShell.Main>
+        <Container size="sm" py={80}>
+          <Stack gap="lg">
+            <Title>Ear Training</Title>
+
+            <Text c="dimmed">
+              Listen to two notes and identify the interval.
+            </Text>
+
+            <Group>
+              <Button onClick={generate}>Generate</Button>
+              <Button onClick={play} disabled={!notePair}>
+                Play Interval
+              </Button>
+            </Group>
+
+            <Select
+              label="Your guess"
+              placeholder="Pick interval"
+              data={Object.keys(INTERVALS)}
+              value={guess}
+              onChange={checkAnswer}
+            />
+
+            {result && <Text>{result}</Text>}
+          </Stack>
+        </Container>
+      </AppShell.Main>
+    </AppShell>
+
+    
   );
 }

@@ -1,13 +1,16 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import EarTraining from "./pages/EarTraining";
+import Projects from "./pages/Projects";
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/ear-training" element={<EarTraining />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+      </Route>
     </Routes>
   );
 }

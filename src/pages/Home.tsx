@@ -43,37 +43,7 @@ const projects = [
 
 export default function Home() {
   return (
-    <AppShell header={{ height: 70 }} padding="md">
-
-      {/* Header */}
-      <AppShell.Header>
-        <Container h="100%">
-          <Group justify="space-between" h="100%">
-            <Title order={3} c="mint.5">
-              Tyler-Rasmussen.dev
-            </Title>
-
-            <Group>
-              <Button component={Link} to="/" variant="subtle">
-                Home
-              </Button>
-
-              <Button
-                component={Link}
-                to="/ear-training"
-                variant="light"
-                color="mint"
-              >
-                Ear Training
-              </Button>
-            </Group>
-          </Group>
-        </Container>
-      </AppShell.Header>
-
-      {/* Main */}
-      <AppShell.Main>
-        <Container size="lg">
+    <Container size="lg">
 
           {/* Hero */}
           <Stack py={120} gap="lg" align="center">
@@ -95,7 +65,10 @@ export default function Home() {
             </Text>
 
             <Group>
-              <Button size="lg" color="mint">
+              <Button 
+                size="lg" 
+                color="mint"
+                >
                 View Projects
               </Button>
 
@@ -103,6 +76,9 @@ export default function Home() {
                 size="lg"
                 variant="default"
                 leftSection={<IconBrandGithub size={18} />}
+                component="a"
+                href="https://github.com/TyRawr"
+                target="_blank"
               >
                 GitHub
               </Button>
@@ -145,17 +121,16 @@ export default function Home() {
                   <IconBrandGithub />
                 </ThemeIcon>
 
-                <Title order={4}>Learning Systems</Title>
+                <Title order={4}>Game Design</Title>
 
                 <Text c="dimmed">
-                  I like building experimental tools like audio training systems,
-                  automation, and interactive apps.
+                  I like building video games.
                 </Text>
               </Card>
             </SimpleGrid>
           </Stack>
 
-          {/* Projects */}
+          {/* Projects 
           <Stack py={60}>
             <Title order={2}>Featured Projects</Title>
 
@@ -180,9 +155,8 @@ export default function Home() {
               ))}
             </SimpleGrid>
           </Stack>
+          */}
 
         </Container>
-      </AppShell.Main>
-    </AppShell>
   );
 }
