@@ -1,5 +1,4 @@
 import {
-  AppShell,
   Button,
   Card,
   Container,
@@ -17,29 +16,6 @@ import {
   IconRocket,
   IconUser,
 } from "@tabler/icons-react";
-
-import { Link } from "react-router-dom";
-
-const projects = [
-  {
-    title: "BookEase",
-    description:
-      "Appointment scheduling platform built with React, TypeScript, and Supabase.",
-    route: "/projects/bookease",
-  },
-  {
-    title: "Portfolio",
-    description:
-      "This website. Built to showcase projects, experiments, and technical writing.",
-    route: "/projects/portfolio",
-  },
-  {
-    title: "Next Project",
-    description:
-      "A future project demonstrating another technology or concept.",
-    route: "/projects/next-project",
-  },
-];
 
 export default function Home() {
   return (
