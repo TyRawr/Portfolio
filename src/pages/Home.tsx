@@ -44,6 +44,8 @@ export default function Home() {
               <Button 
                 size="lg" 
                 color="mint"
+                component="a"
+                href="/projects"
                 >
                 View Projects
               </Button>
@@ -105,33 +107,6 @@ export default function Home() {
               </Card>
             </SimpleGrid>
           </Stack>
-
-          {/* Projects 
-          <Stack py={60}>
-            <Title order={2}>Featured Projects</Title>
-
-            <SimpleGrid cols={{ base: 1, md: 3 }}>
-              {projects.map((project) => (
-                <Card key={project.route} withBorder radius="lg" p="xl">
-                  <Title order={3}>{project.title}</Title>
-
-                  <Text c="dimmed" my="md">
-                    {project.description}
-                  </Text>
-
-                  <Button
-                    component={Link}
-                    to={project.route}
-                    color="mint"
-                    variant="light"
-                  >
-                    View Project
-                  </Button>
-                </Card>
-              ))}
-            </SimpleGrid>
-          </Stack>
-          */}
 
         </Container>
   );
