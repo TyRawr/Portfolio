@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { AppShell, Button, Container, Group, Select, Stack, Text, Title } from "@mantine/core";
-import { Link } from "react-router-dom";
+import { Button, Container, Group, Select, Stack, Text, Title } from "@mantine/core";
 
 const NOTES = [
   { name: "C4", freq: 261.63 },
