@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import EarTraining from "./pages/EarTraining";
+import Resume from "./pages/Resume";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/ear-training" element={<EarTraining />} />
+        <Route path="/resume" element={<Resume />} />
       </Route>
     </Routes>
   );
